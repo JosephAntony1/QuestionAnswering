@@ -8,9 +8,9 @@ from prepro import annotate, to_id, init
 from train import BatchGen
 
 """
-This script serves as a template to be modified to suit all possible testing environments, including and not limited 
+This script serves as a template to be modified to suit all possible testing environments, including and not limited
 to files (json, xml, csv, ...), web service, databases and so on.
-To change this script to batch model, simply modify line 70 from "BatchGen([model_in], batch_size=1, ...)" to 
+To change this script to batch model, simply modify line 70 from "BatchGen([model_in], batch_size=1, ...)" to
 "BatchGen([model_in_1, model_in_2, ...], batch_size=batch_size, ...)".
 """
 
@@ -48,27 +48,33 @@ w2id = {w: i for i, w in enumerate(meta['vocab'])}
 tag2id = {w: i for i, w in enumerate(meta['vocab_tag'])}
 ent2id = {w: i for i, w in enumerate(meta['vocab_ent'])}
 init()
-
+question = ""
 while True:
-    id_ = 0
-    try:
-        while True:
-            evidence = input('Evidence: ')
-            if evidence.strip():
-                break
-        while True:
-            question = input('Question: ')
-            if question.strip():
-                break
-    except EOFError:
+    evidence = input('Evidence: ')
+    question = ""
+    while True:
+        stopper = input()
+        if stopper == "stop":
+            break
+        else:
+            evidence += stopper
+    while question != "stop":
+        id_ = 0
+        try:
+            while True:
+                question = input('Question: ')
+                if question.strip():
+                    break
+        except EOFError:
+            print()
+            break
+        id_ += 1
+        start_time = time.time()
+        annotated = annotate(('interact-{}'.format(id_), evidence, question), meta['wv_cased'])
+        model_in = to_id(annotated, w2id, tag2id, ent2id)
+        model_in = next(iter(BatchGen([model_in], batch_size=1, gpu=args.cuda, evaluation=True)))
+        prediction = model.predict(model_in)[0]
+        end_time = time.time()
+        print('Answer: {}'.format(prediction))
+        print('Time: {:.4f}s'.format(end_time - start_time))
         print()
-        break
-    id_ += 1
-    start_time = time.time()
-    annotated = annotate(('interact-{}'.format(id_), evidence, question), meta['wv_cased'])
-    model_in = to_id(annotated, w2id, tag2id, ent2id)
-    model_in = next(iter(BatchGen([model_in], batch_size=1, gpu=args.cuda, evaluation=True)))
-    prediction = model.predict(model_in)[0]
-    end_time = time.time()
-    print('Answer: {}'.format(prediction))
-    print('Time: {:.4f}s'.format(end_time - start_time))
