@@ -1,5 +1,6 @@
-SQuAD/
+
 drqa/__pycache__/
+SQuAD/
 glove/
 models/
 *.log

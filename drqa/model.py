@@ -143,8 +143,7 @@ class DocReaderModel(object):
             'f1': f1,
             'best_eval': best_eval,
             'random_state': random.getstate(),
-            'torch_state': torch.random.get_rng_state(),
-            'torch_cuda_state': torch.cuda.get_rng_state()
+            'torch_state': torch.random.get_rng_state()
         }
         try:
             torch.save(params, filename)
