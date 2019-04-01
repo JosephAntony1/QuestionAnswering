@@ -2,5 +2,5 @@
 drqa/__pycache__/
 SQuAD/
 glove/
-models/
+models/checkpoint*
 *.log
