@@ -58,7 +58,7 @@ while True:
             break
         else:
             evidence += stopper
-    while question != "stop":
+    while question != "stop" and question != "":
         id_ = 0
         try:
             while True:
