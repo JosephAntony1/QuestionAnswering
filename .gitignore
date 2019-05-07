@@ -4,3 +4,4 @@ SQuAD/
 glove/
 models/checkpoint*
 *.log
+__pycache__/
