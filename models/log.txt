@@ -15234,3 +15234,7 @@
 03/20/2019 03:36:48 > epoch [13] updates[ 35164] train loss[2.71962] remaining[0:00:04]
 03/20/2019 03:38:57 dev EM: 68.06054872280038 F1: 77.28039611833765
 03/20/2019 03:39:07 [new best model saved.]
+05/07/2019 01:08:12 [Program starts. Loading data...]
+05/07/2019 01:08:38 {'log_per_updates': 3, 'data_file': 'SQuAD/data.msgpack', 'model_dir': '/mnt/c/Users/Kiran/Documents/modDrQA/DrQA/models', 'save_last_only': False, 'save_dawn_logs': False, 'seed': 1013, 'cuda': False, 'epochs': 40, 'batch_size': 32, 'resume': 'best_model.pt', 'resume_options': False, 'reduce_lr': 0.0, 'optimizer': 'adamax', 'grad_clipping': 10, 'weight_decay': 0, 'learning_rate': 0.1, 'momentum': 0, 'tune_partial': 1000, 'fix_embeddings': False, 'rnn_padding': False, 'question_merge': 'self_attn', 'doc_layers': 3, 'question_layers': 3, 'hidden_size': 128, 'num_features': 4, 'pos': True, 'ner': True, 'use_qemb': True, 'concat_rnn_layers': True, 'dropout_emb': 0.4, 'dropout_rnn': 0.4, 'dropout_rnn_output': True, 'max_len': 15, 'rnn_type': 'lstm', 'pretrained_words': True, 'vocab_size': 91187, 'embedding_dim': 300, 'pos_size': 50, 'ner_size': 19}
+05/07/2019 01:08:38 [Data loaded.]
+05/07/2019 01:08:38 [loading previous model...]
