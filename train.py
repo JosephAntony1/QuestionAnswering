@@ -111,7 +111,7 @@ def setup():
     parser.add_argument('--seed', type=int, default=1013,
                         help='random seed for data shuffling, dropout, etc.')
     parser.add_argument("--cuda", type=str2bool, nargs='?',
-                        const=False, default=torch.cuda.is_available(),
+                        const=True, default=torch.cuda.is_available(),
                         help='whether to use GPU acceleration.')
     # training
     parser.add_argument('-e', '--epochs', type=int, default=40)
@@ -375,4 +375,3 @@ def score(pred, truth):
 
 if __name__ == '__main__':
     main()
-
