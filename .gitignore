@@ -3,5 +3,6 @@ drqa/__pycache__/
 SQuAD/
 glove/
 models/checkpoint*
+models/Backup/*
 *.log
 __pycache__/
