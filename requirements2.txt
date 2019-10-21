@@ -29,7 +29,7 @@ docker==3.5.0
 docker-pycreds==0.3.0
 docutils==0.14
 -e git+https://github.com/facebookresearch/DrQA.git@2aec75edefb8725cabb34406bf7aaa4db66b769d#egg=drqa
-ecdsa==0.13
+ecdsa==0.13.3
 editdistance==0.5.2
 en-core-web-sm==1.2.0
 flaky==3.4.0
