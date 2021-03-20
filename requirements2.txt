@@ -49,7 +49,7 @@ ipython==7.2.0
 ipython-genutils==0.2.0
 itsdangerous==0.24
 jedi==0.13.2
-Jinja2==2.10
+Jinja2==2.11.3
 jmespath==0.9.3
 jsondiff==1.1.1
 jsonnet==0.10.0
