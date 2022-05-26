@@ -114,7 +114,7 @@ sphinxcontrib-websupport==1.1.0
 sqlparse==0.2.4
 tensorboard==1.12.2
 tensorboardX==1.2
-tensorflow==1.1.0
+tensorflow==2.7.2
 termcolor==1.1.0
 thinc==6.5.2
 toolz==0.9.0
